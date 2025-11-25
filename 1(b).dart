@@ -1,35 +1,20 @@
-void main() {
-  //  Variables & Data Types
-  String name = 'Uday';
-  int age = 31;
-  double height = 5.8;
-  bool isTeacher = true;
-
-
-  //  Print variables
-  print('Name: $name');
-  print('Age: $age');
-  print('Height: $height');
-  print('Is Teacher: $isTeacher');
-
-
-  // List (Array)
-  List<String> subjects = ['Dart', 'Flutter', 'AI', 'Python'];
-
-
-  //  Loop through the list
-  print('\nSubjects Known:');
-  for (String subject in subjects) {
-    print('- $subject');
-  }
-
-
-  //  Function call
-  greetUser(name);
-}
-
-
-//  Function definition
-void greetUser(String userName) {
-  print('\nWelcome, $userName! Enjoy learning Dart.');
-}
+import 'package:flutter/material.dart'; 
+void main() => runApp(const MyApp()); 
+class MyApp extends StatelessWidget { 
+const MyApp({super.key}); 
+@override 
+Widget build(BuildContext context) { 
+return MaterialApp( 
+home: Scaffold( 
+appBar: AppBar(title: const Text('Responsive UI')), body: LayoutBuilder( 
+builder: (context, constraints) {
+if (constraints.maxWidth < 600) { 
+return const Center(child: Text('�� Mobile View')); } else { 
+return const Center(child: Text('�� Tablet/Desktop View')); 
+} 
+}, 
+), 
+), 
+); 
+} 
+} 
